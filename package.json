@@ -1,0 +1,10 @@
+{
+  "name": "html-to-pptx-skill",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Codex skill scripts for rendering local HTML slide decks to PPTX.",
+  "license": "MIT",
+  "dependencies": {
+    "playwright-core": "^1.60.0"
+  }
+}
