@@ -1,5 +1,5 @@
 ---
-name: html-to-pptx
+name: html-to-pptx-skill
 description: Convert local HTML slide decks to shareable PPTX files by rendering each slide as a high-resolution image, validating broken images/media, optionally embedding or packaging video assets, and creating a release ZIP. Use when the user asks to turn an HTML/web PPT/deck into PPTX, export a huashu/guizang HTML deck, preserve visual fidelity, include videos, or package a PPTX for classmates/judges.
 ---
 
@@ -34,7 +34,7 @@ Use this skill when converting a local HTML slide deck into a PowerPoint-friendl
 Render a deck:
 
 ```powershell
-node "C:\Users\20245\.codex\skills\html-to-pptx\scripts\render_html_deck.js" `
+node "<skill-dir>\scripts\render_html_deck.js" `
   --deck-dir "deck" `
   --serve-root "." `
   --out "deck\exports\slide-images" `
@@ -44,7 +44,7 @@ node "C:\Users\20245\.codex\skills\html-to-pptx\scripts\render_html_deck.js" `
 Build PPTX:
 
 ```powershell
-py "C:\Users\20245\.codex\skills\html-to-pptx\scripts\build_pptx.py" `
+py "<skill-dir>\scripts\build_pptx.py" `
   --manifest "deck\exports\slide-manifest.json" `
   --out "deck\exports\deck.pptx"
 ```
@@ -52,7 +52,7 @@ py "C:\Users\20245\.codex\skills\html-to-pptx\scripts\build_pptx.py" `
 Package PPTX and video:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File "C:\Users\20245\.codex\skills\html-to-pptx\scripts\pack_release.ps1" `
+powershell -ExecutionPolicy Bypass -File "<skill-dir>\scripts\pack_release.ps1" `
   -OutputZip "deck\exports\deck-release.zip" `
   -Files "deck\exports\deck.pptx","assets\demo.mp4"
 ```
